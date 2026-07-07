@@ -1,0 +1,671 @@
+{
+  "tabs": [
+    {
+      "id": "adam_to_abraham",
+      "title_zh": "1. 從亞當到亞伯拉罕的家譜",
+      "tree": {
+        "id": "adam",
+        "children": [
+          {
+            "id": "seth",
+            "children": [
+              {
+                "id": "enosh",
+                "children": [
+                  {
+                    "id": "kenan",
+                    "children": [
+                      {
+                        "id": "mahalalel",
+                        "children": [
+                          {
+                            "id": "jared",
+                            "children": [
+                              {
+                                "id": "enoch",
+                                "children": [
+                                  {
+                                    "id": "methuselah",
+                                    "children": [
+                                      {
+                                        "id": "lemech",
+                                        "children": [
+                                          {
+                                            "id": "noah",
+                                            "children": [
+                                              {
+                                                "id": "shem",
+                                                "children": [
+                                                  {
+                                                    "id": "arpachshad",
+                                                    "children": [
+                                                      {
+                                                        "id": "shelah_p",
+                                                        "children": [
+                                                          {
+                                                            "id": "eber",
+                                                            "children": [
+                                                              {
+                                                                "id": "peleg",
+                                                                "children": [
+                                                                  {
+                                                                    "id": "reu",
+                                                                    "children": [
+                                                                      {
+                                                                        "id": "serug",
+                                                                        "children": [
+                                                                          {
+                                                                            "id": "nahor",
+                                                                            "children": [
+                                                                              {
+                                                                                "id": "terah",
+                                                                                "children": [
+                                                                                  {
+                                                                                    "id": "abraham",
+                                                                                    "children": [
+                                                                                      { "id": "isaac" },
+                                                                                      {
+                                                                                        "id": "ishmael",
+                                                                                        "children": [
+                                                                                          { "id": "nebaioth" },
+                                                                                          { "id": "kedar" },
+                                                                                          { "id": "adbeel" },
+                                                                                          { "id": "mibsam" },
+                                                                                          { "id": "mishma" },
+                                                                                          { "id": "dumah" },
+                                                                                          { "id": "massa" },
+                                                                                          { "id": "hadad" },
+                                                                                          { "id": "tema" },
+                                                                                          { "id": "jetur" },
+                                                                                          { "id": "naphish" },
+                                                                                          { "id": "kedemah" }
+                                                                                        ]
+                                                                                      },
+                                                                                      {
+                                                                                        "id": "keturah_f",
+                                                                                        "notes_zh": "亞伯拉罕的妾",
+                                                                                        "notes_en": "Abraham's concubine",
+                                                                                        "children": [
+                                                                                          { "id": "zimran" },
+                                                                                          { "id": "jokshan" },
+                                                                                          { "id": "medan" },
+                                                                                          {
+                                                                                            "id": "midian",
+                                                                                            "children": [
+                                                                                              { "id": "ephah" },
+                                                                                              { "id": "epher" },
+                                                                                              { "id": "hanoch" },
+                                                                                              { "id": "abida" },
+                                                                                              { "id": "eldaah" }
+                                                                                            ]
+                                                                                          },
+                                                                                          { "id": "ishbak" },
+                                                                                          { "id": "shuah" }
+                                                                                        ]
+                                                                                      }
+                                                                                    ]
+                                                                                  }
+                                                                                ]
+                                                                              }
+                                                                            ]
+                                                                          }
+                                                                        ]
+                                                                      }
+                                                                    ]
+                                                                  },
+                                                                  {
+                                                                    "id": "joktan",
+                                                                    "children": [
+                                                                      { "id": "almodad" }, { "id": "sheleph" }, { "id": "hazarmaveth" },
+                                                                      { "id": "jerah" }, { "id": "hadoram" }, { "id": "uzal" },
+                                                                      { "id": "diklah" }, { "id": "ebal_p" }, { "id": "abimael" },
+                                                                      { "id": "sheba" }, { "id": "ophir" }, { "id": "havilah" }, { "id": "jobab" }
+                                                                    ]
+                                                                  }
+                                                                ]
+                                                              }
+                                                            ]
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "id": "ham",
+                                                "children": [
+                                                  {
+                                                    "id": "cush",
+                                                    "children": [
+                                                      { "id": "seba" }, { "id": "havilah" }, { "id": "sabta" }, 
+                                                      { "id": "raamah", "children": [{ "id": "sheba" }, { "id": "dedan" }] }, 
+                                                      { "id": "sabteca" },
+                                                      { "id": "nimrod", "notes_zh": "地上最早的勇士", "notes_en": "First mighty warrior" }
+                                                    ]
+                                                  },
+                                                  {
+                                                    "id": "mizraim",
+                                                    "children": [
+                                                      { "id": "ludim" }, { "id": "anamim" }, { "id": "lehabim" }, 
+                                                      { "id": "naphtuhim" }, { "id": "pathrusim" }, 
+                                                      { "id": "casluhim", "children": [{ "id": "philistines" }] }, 
+                                                      { "id": "caphtorim" }
+                                                    ]
+                                                  },
+                                                  { "id": "put" },
+                                                  {
+                                                    "id": "canaan",
+                                                    "children": [
+                                                      { "id": "sidon", "notes_zh": "長子", "notes_en": "Firstborn" }, { "id": "heth" }, 
+                                                      { "id": "jebusites" }, { "id": "amorites" }, { "id": "girgashites" }, 
+                                                      { "id": "hivites" }, { "id": "arkites" }, { "id": "sinites" }, 
+                                                      { "id": "arvadites" }, { "id": "zemarites" }, { "id": "hamathites" }
+                                                    ]
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "id": "japheth",
+                                                "children": [
+                                                  {
+                                                    "id": "gomer",
+                                                    "children": [
+                                                      { "id": "ashkenaz" }, { "id": "diphath" }, { "id": "togarmah" }
+                                                    ]
+                                                  },
+                                                  { "id": "magog" }, { "id": "madai" },
+                                                  {
+                                                    "id": "javan",
+                                                    "children": [
+                                                      { "id": "elishah" }, { "id": "tarshish" }, { "id": "kittim" }, { "id": "rodanim" }
+                                                    ]
+                                                  },
+                                                  { "id": "tubal" }, { "id": "meshech" }, { "id": "tiras" }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "esau_genealogy",
+      "title_zh": "2. 以掃的家譜",
+      "tree": {
+        "id": "esau",
+        "notes_zh": "又名以東",
+        "notes_en": "Also called Edom",
+        "children": [
+          {
+            "id": "eliphaz",
+            "children": [
+              { "id": "teman" }, { "id": "omar" }, { "id": "zephi" }, { "id": "gatam" }, { "id": "kenaz" },
+              { "id": "timna_f", "notes_zh": "以利法的妾/妹妹", "notes_en": "Concubine" },
+              { "id": "amalek" }
+            ]
+          },
+          {
+            "id": "reuel",
+            "children": [
+              { "id": "nahath" }, { "id": "zerah" }, { "id": "shammah" }, { "id": "mizzah" }
+            ]
+          },
+          { "id": "jeush" }, { "id": "jalam" }, { "id": "korah" },
+          {
+            "id": "seir",
+            "notes_zh": "西珥地原住民世系",
+            "notes_en": "Inhabitants of Seir",
+            "children": [
+              {
+                "id": "lotan",
+                "children": [
+                  { "id": "hori" }, { "id": "homam" }, 
+                  { "id": "timna_f", "notes_zh": "羅坍的妹妹", "notes_en": "Sister of Lotan" }
+                ]
+              },
+              {
+                "id": "shobal",
+                "children": [
+                  { "id": "alvan" }, { "id": "manahath" }, { "id": "ebal_p" }, { "id": "shepho" }, { "id": "onam" }
+                ]
+              },
+              {
+                "id": "zibeon",
+                "children": [
+                  { "id": "ajah" }, 
+                  { "id": "anah", "children": [{ "id": "dishon", "children": [{ "id": "hemdan" }, { "id": "eshban" }, { "id": "ithran" }, { "id": "cheran" }] }] }
+                ]
+              },
+              {
+                "id": "ezer",
+                "children": [
+                  { "id": "bilhan" }, { "id": "zaavan" }, { "id": "akan" }
+                ]
+              },
+              {
+                "id": "dishan",
+                "children": [
+                  { "id": "uz" }, { "id": "aran" }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "judah_and_david",
+      "title_zh": "3. 猶大家譜與大衛王室",
+      "tree": {
+        "id": "judah",
+        "children": [
+          { "id": "er", "notes_zh": "惡而死", "notes_en": "Died wicked" },
+          { "id": "onan" },
+          { "id": "shelah_j" },
+          {
+            "id": "tamar_f",
+            "notes_zh": "猶大的兒媳",
+            "notes_en": "Daughter-in-law of Judah",
+            "children": [
+              {
+                "id": "pharez",
+                "children": [
+                  {
+                    "id": "hezron",
+                    "children": [
+                      {
+                        "id": "ram",
+                        "children": [
+                          {
+                            "id": "aminadab",
+                            "children": [
+                              {
+                                "id": "nahshon",
+                                "notes_zh": "猶大支派的首領",
+                                "notes_en": "Leader of Judah",
+                                "children": [
+                                  {
+                                    "id": "salmon",
+                                    "children": [
+                                      {
+                                        "id": "boaz",
+                                        "children": [
+                                          {
+                                            "id": "obed",
+                                            "children": [
+                                              {
+                                                "id": "jesse",
+                                                "children": [
+                                                  { "id": "elivah", "notes_zh": "長子", "notes_en": "1st son" },
+                                                  { "id": "abinadab" }, { "id": "shimea" }, { "id": "nethanel" }, { "id": "raddai" }, { "id": "ozem" },
+                                                  {
+                                                    "id": "david",
+                                                    "notes_zh": "第七子/大衛王",
+                                                    "notes_en": "7th son / King David",
+                                                    "children": [
+                                                      {
+                                                        "id": "solomon",
+                                                        "notes_zh": "拔書亞所生/繼位為王",
+                                                        "notes_en": "Born of Bathshua / King",
+                                                        "children": [
+                                                          {
+                                                            "id": "rehoboam",
+                                                            "children": [
+                                                              {
+                                                                "id": "abijah",
+                                                                "children": [
+                                                                  {
+                                                                    "id": "asa",
+                                                                    "children": [
+                                                                      {
+                                                                        "id": "jehoshaphat",
+                                                                        "children": [
+                                                                          {
+                                                                            "id": "joram",
+                                                                            "children": [
+                                                                              {
+                                                                                "id": "ahaziah",
+                                                                                "children": [
+                                                                                  {
+                                                                                    "id": "joash",
+                                                                                    "children": [
+                                                                                      {
+                                                                                        "id": "amaziah",
+                                                                                        "children": [
+                                                                                          {
+                                                                                            "id": "azariah",
+                                                                                            "children": [
+                                                                                              {
+                                                                                                "id": "jotham",
+                                                                                                "children": [
+                                                                                                  {
+                                                                                                    "id": "ahaz",
+                                                                                                    "children": [
+                                                                                                      {
+                                                                                                        "id": "hezekiah",
+                                                                                                        "children": [
+                                                                                                          {
+                                                                                                            "id": "manasseh",
+                                                                                                            "children": [
+                                                                                                              {
+                                                                                                                "id": "amon",
+                                                                                                                "children": [
+                                                                                                                  {
+                                                                                                                    "id": "josiah",
+                                                                                                                    "children": [
+                                                                                                                      {
+                                                                                                                        "id": "jeconiah",
+                                                                                                                        "notes_zh": "被擄的君王",
+                                                                                                                        "notes_en": "Captive King",
+                                                                                                                        "children": [
+                                                                                                                          {
+                                                                                                                            "id": "pedaiah",
+                                                                                                                            "children": [
+                                                                                                                              { "id": "zerubbabel", "notes_zh": "帶領歸回的首領", "notes_en": "Leader of return" }
+                                                                                                                            ]
+                                                                                                                          }
+                                                                                                                        ]
+                                                                                                                      }
+                                                                                                                    ]
+                                                                                                                  }
+                                                                                                                ]
+                                                                                                              }
+                                                                                                            ]
+                                                                                                          }
+                                                                                                        ]
+                                                                                                      }
+                                                                                                    ]
+                                                                                                  }
+                                                                                                ]
+                                                                                              }
+                                                                                            ]
+                                                                                          }
+                                                                                        ]
+                                                                                      }
+                                                                                    ]
+                                                                                  }
+                                                                                ]
+                                                                              }
+                                                                            ]
+                                                                          }
+                                                                        ]
+                                                                      }
+                                                                    ]
+                                                                  }
+                                                                ]
+                                                              }
+                                                            ]
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  },
+                                                  {
+                                                    "id": "zeruiah_f",
+                                                    "notes_zh": "大衛的姊妹",
+                                                    "notes_en": "Sister of David",
+                                                    "children": [
+                                                      { "id": "abishai" }, { "id": "joab" }, { "id": "asahel" }
+                                                    ]
+                                                  },
+                                                  {
+                                                    "id": "abigail_f",
+                                                    "notes_zh": "大衛的姊妹",
+                                                    "notes_en": "Sister of David",
+                                                    "children": [
+                                                      { "id": "amasa" }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "id": "chelubai",
+                        "notes_zh": "又名迦勒",
+                        "notes_en": "Also called Caleb",
+                        "children": [
+                          {
+                            "id": "azubah_f",
+                            "notes_zh": "迦勒之妻",
+                            "notes_en": "Wife of Caleb",
+                            "children": [
+                              {
+                                "id": "hur",
+                                "children": [
+                                  { "id": "ur", "children": [{ "id": "bezalel", "notes_zh": "建造聖幕者", "notes_en": "Craftsman of Tabernacle" }] },
+                                  { "id": "jabez", "notes_zh": "比眾弟兄更尊貴的雅比斯", "notes_en": "More honorable Jabez" }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  { "id": "hamul" }
+                ]
+              },
+              {
+                "id": "zarah",
+                "children": [
+                  { "id": "zimri" }, { "id": "ethan" }, { "id": "heman" }, { "id": "calcol" }, { "id": "dara" },
+                  { "id": "carmi", "children": [{ "id": "achar", "notes_zh": "在當滅的物上犯罪叫以色列遭禍", "notes_en": "Troubler of Israel" }] }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "other_tribes",
+      "title_zh": "4. 以色列其餘支派",
+      "tree": {
+        "id": "israel",
+        "notes_zh": "雅各/全支派總綱",
+        "notes_en": "Jacob / Father of Tribes",
+        "children": [
+          {
+            "id": "reuben",
+            "notes_zh": "約但河東/流便支派",
+            "notes_en": "East of Jordan",
+            "children": [
+              { "id": "hanoch" }, { "id": "pallu" }, { "id": "hezron" }, { "id": "carmi" }
+            ]
+          },
+          {
+            "id": "simeon",
+            "notes_zh": "西緬支派",
+            "notes_en": "Tribe of Simeon"
+          },
+          {
+            "id": "issachar",
+            "notes_zh": "以薩迦支派",
+            "notes_en": "Tribe of Issachar",
+            "children": [
+              { "id": "tola" }, { "id": "puah" }, { "id": "jashub" }, { "id": "shimron" }
+            ]
+          },
+          { "id": "zebulun" }, { "id": "dan" }, { "id": "naphtali" }, { "id": "gad", "notes_zh": "約但河東/迦得支派", "notes_en": "East of Jordan" }, { "id": "asher" },
+          {
+            "id": "ephraim",
+            "notes_zh": "以法蓮支派",
+            "notes_en": "Tribe of Ephraim",
+            "children": [
+              { "id": "beriah", "notes_zh": "因遭禍而生之子", "notes_en": "Born during tragedy" },
+              { "id": "sherah_f", "notes_zh": "女性建築師：建造了上下伯和侖", "notes_en": "Female architect: built Beth-horon" },
+              {
+                "id": "nun",
+                "children": [
+                  { "id": "joshua", "notes_zh": "帶領以色列人進迦南的約書亞", "notes_en": "Joshua the Leader" }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "levite_genealogy",
+      "title_zh": "5. 利未的家譜",
+      "tree": {
+        "id": "levi",
+        "children": [
+          {
+            "id": "kohath",
+            "children": [
+              {
+                "id": "amram",
+                "children": [
+                  {
+                    "id": "aaron",
+                    "notes_zh": "大祭司始祖",
+                    "notes_en": "First High Priest",
+                    "children": [
+                      {
+                        "id": "eleazar",
+                        "children": [
+                          {
+                            "id": "phinehas",
+                            "children": [
+                              {
+                                "id": "abishua",
+                                "children": [
+                                  {
+                                    "id": "bukki",
+                                    "children": [
+                                      {
+                                        "id": "uzzi",
+                                        "children": [
+                                          {
+                                            "id": "zerahiah",
+                                            "children": [
+                                              {
+                                                "id": "meraioth",
+                                                "children": [
+                                                  {
+                                                    "id": "amariah",
+                                                    "children": [
+                                                      {
+                                                        "id": "ahitub",
+                                                        "children": [
+                                                          {
+                                                            "id": "zadok",
+                                                            "notes_zh": "大衛時代大祭司",
+                                                            "notes_en": "High Priest of David's era",
+                                                            "children": [
+                                                              {
+                                                                "id": "ahimaaz",
+                                                                "children": [
+                                                                  {
+                                                                    "id": "azariah",
+                                                                    "notes_zh": "在所羅門聖殿中供職的大祭司",
+                                                                    "notes_en": "Priest in Solomon's Temple"
+                                                                  }
+                                                                ]
+                                                              }
+                                                            ]
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  { "id": "moses", "notes_zh": "神人摩西", "notes_en": "Moses the Man of God" }
+                ]
+              }
+            ]
+          },
+          { "id": "greshon", "notes_zh": "聖殿音樂家亞薩的先祖線", "notes_en": "Lineage of Asaph" },
+          { "id": "merari", "notes_zh": "聖殿音樂家以探的先祖線", "notes_en": "Lineage of Ethan" }
+        ]
+      }
+    },
+    {
+      "id": "benjamin_and_saul",
+      "title_zh": "6. 便雅憫的家譜與掃羅王室",
+      "tree": {
+        "id": "benjamin",
+        "children": [
+          {
+            "id": "kish",
+            "children": [
+              {
+                "id": "saul",
+                "notes_zh": "以色列首位君王",
+                "notes_en": "First King of Israel",
+                "children": [
+                  {
+                    "id": "jonathan",
+                    "notes_zh": "大衛的生死之交",
+                    "notes_en": "David's loyal friend",
+                    "children": [
+                      { "id": "merib_baal", "notes_zh": "即米非波設", "notes_en": "Also Mephibosheth" }
+                    ]
+                  },
+                  { "id": "malchi-shua" }, { "id": "abinadab" }, { "id": "eshbaal" }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "returned_exiles",
+      "title_zh": "7. 歸回之以色列人的家譜",
+      "tree": {
+        "id": "shallum_gate",
+        "notes_zh": "守門人的總首領 / 把守會幕入口",
+        "notes_en": "Chief Gatekeeper / Tabernacle Guard",
+        "children": [
+          { "id": "zechariah", "notes_zh": "看守會幕門口的撒迦利雅", "notes_en": "Gatekeeper Zechariah" },
+          { "id": "mattithiah", "notes_zh": "受託管理盤中烤的物", "notes_en": "In charge of baked offerings" }
+        ]
+      }
+    }
+  ]
+}
