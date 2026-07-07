@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>歷代志上 1-9 章終極全支派聖經家譜樹</title>
+  <style>
+    :root {
+      --primary-color: #2c3e50;
+      --accent-color: #d35400;
+      --bg-color: #f4f6f7;
+      --card-bg: #ffffff;
+      --male-color: #2980b9;
+      --female-color: #e74c3c;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--primary-color);
+      margin: 0;
+      padding: 20px;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    /* 控制區排版 */
+    .control-panel {
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      max-width: 900px;
+      margin: 0 auto 25px auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .control-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    select, input, button {
+      padding: 10px 14px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      outline: none;
+    }
+    select:focus, input:focus {
+      border-color: var(--primary-color);
+    }
+    .lang-btn {
+      background-color: #e0e0e0;
+      cursor: pointer;
+      font-weight: bold;
+      border: none;
+    }
+    .lang-btn.active {
+      background-color: var(--primary-color);
+      color: white;
+    }
+    .search-btn {
+      background-color: var(--accent-color);
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    /* 巨型畫布 */
+    .tree-wrapper {
+      background: var(--card-bg);
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      overflow: auto;
+      min-height: 500px;
+    }
+    /* CSS 樹狀連線結構 */
+    .genealogy-tree ul {
+      padding-top: 20px; position: relative;
+      transition: all 0.5s;
+      display: flex;
+      justify-content: center;
+    }
+    .genealogy-tree li {
+      text-align: center;
+      list-style-type: none;
+      position: relative;
+      padding: 20px 5px 0 5px;
+      transition: all 0.5s;
+    }
+    .genealogy-tree li::before, .genealogy-tree li::after {
+      content: '';
+      position: absolute; top: 0; right: 50%;
+      border-top: 2px solid #ccc;
+      width: 50%; height: 20px;
+    }
+    .genealogy-tree li::after {
+      right: auto; left: 50%;
+      border-left: 2px solid #ccc;
+    }
+    .genealogy-tree li:only-child::after, .genealogy-tree li:only-child::before {
+      display: none;
+    }
+    .genealogy-tree li:only-child { padding-top: 0; }
+    .genealogy-tree li:first-child::before, .genealogy-tree li:last-child::after {
+      border: none;
+    }
+    .genealogy-tree li:last-child::before {
+      border-right: 2px solid #ccc;
+      border-radius: 0 5px 0 0;
+    }
+    .genealogy-tree li:first-child::after {
+      border-radius: 5px 0 0 0;
+    }
+    .genealogy-tree ul ul::before {
+      content: '';
+      position: absolute; top: 0; left: 50%;
+      border-left: 2px solid #ccc;
+      width: 0; height: 20px;
+    }
+    /* 性別幾何形狀卡片 */
+    .node-card {
+      padding: 12px;
+      display: inline-block;
+      background-color: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: all 0.3s;
+      vertical-align: top;
+      min-width: 100px;
+    }
+    /* 男生：天藍色正方形 */
+    .node-card.M {
+      border: 3px solid var(--male-color);
+      border-radius: 0px; 
+    }
+    /* 女生：玫瑰紅圓形 */
+    .node-card.F {
+      border: 3px solid var(--female-color);
+      border-radius: 50%;
+      min-width: 110px;
+      min-height: 110px;
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .node-title { font-weight: bold; font-size: 15px; }
+    .node-note { font-size: 11px; color: var(--accent-color); margin-top: 4px; max-width: 120px; }
+    
+    /* 搜尋高亮動態閃爍 */
+    @keyframes highlight-glow {
+      0% { transform: scale(1); box-shadow: 0 0 0 rgba(211, 84, 0, 0); }
+      50% { transform: scale(1.15); box-shadow: 0 0 25px #d35400; background-color: #fbeee6; }
+      100% { transform: scale(1); box-shadow: 0 0 0 rgba(211, 84, 0, 0); }
+    }
+    .highlighted {
+      animation: highlight-glow 2s ease-in-out 3;
+      border-width: 5px !important;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1 id="mainTitle">歷代志上 1-9 章終極全支派聖經家譜樹</h1>
+  </header>
+
+  <div class="control-panel">
+    <div class="control-group">
+      <button class="lang-btn active" onclick="switchLanguage('zh')">中文</button>
+      <button class="lang-btn" onclick="switchLanguage('en')">English</button>
+      <button class="lang-btn" onclick="switchLanguage('lang3')">語言3</button>
+      <button class="lang-btn" onclick="switchLanguage('lang4')">語言4</button>
+    </div>
+    
+    <div class="control-group">
+      <select id="chapterSelector" onchange="onChapterSelect()"></select>
+    </div>
+
+    <div class="control-group">
+      <input type="text" id="searchInput" placeholder="搜尋人名..." onkeypress="if(event.keyCode==13) executeSearch()">
+      <button class="search-btn" onclick="executeSearch()">搜尋</button>
+    </div>
+  </div>
+
+  <div class="tree-wrapper">
+    <div class="genealogy-tree" id="treeContent"></div>
+  </div>
+
+  <script>
+    let dictionary = {};
+    let dataPayload = {};
+    let currentLang = 'zh';
+
+    const tabNames = {
+      "zh": {
+        "adam_to_abraham": "1. 從亞當到亞伯拉罕的家譜",
+        "esau_genealogy": "2. 以掃的家譜",
+        "judah_and_david": "3. 猶大家譜與大衛王室",
+        "other_tribes": "4. 以色列其餘支派",
+        "levite_genealogy": "5. 利未的家譜",
+        "benjamin_and_saul": "6. 便雅憫的家譜與掃羅王室",
+        "returned_exiles": "7. 歸回之以色列人的家譜"
+      },
+      "en": {
+        "adam_to_abraham": "1. Genealogy from Adam to Abraham",
+        "esau_genealogy": "2. The Genealogy of Esau",
+        "judah_and_david": "3. Judah & the Royal House of David",
+        "other_tribes": "4. The Remaining Tribes of Israel",
+        "levite_genealogy": "5. The Genealogy of Levi",
+        "benjamin_and_saul": "6. Benjamin & the House of Saul",
+        "returned_exiles": "7. Genealogy of Returned Exiles"
+      }
+    };
+
+    async function init() {
+      try {
+        const resDict = await fetch('dictionary.json');
+        dictionary = await resDict.json();
+        const resData = await fetch('data.json');
+        dataPayload = await resData.json();
+        
+        populateDropdown();
+        renderTree(dataPayload.tabs[0].id);
+      } catch (err) {
+        console.error("資料加載錯誤，請確認 JSON 檔案是否存在且格式正確。", err);
+      }
+    }
+
+    function populateDropdown() {
+      const selector = document.getElementById('chapterSelector');
+      selector.innerHTML = '';
+      dataPayload.tabs.forEach(tab => {
+        const opt = document.createElement('option');
+        opt.value = tab.id;
+        opt.innerText = (tabNames[currentLang] && tabNames[currentLang][tab.id]) || tab.title_zh;
+        selector.appendChild(opt);
+      });
+    }
+
+    function onChapterSelect() {
+      const selectedId = document.getElementById('chapterSelector').value;
+      renderTree(selectedId);
+    }
+
+    function switchLanguage(lang) {
+      currentLang = lang;
+      document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+      
+      const titleEl = document.getElementById('mainTitle');
+      titleEl.innerText = lang === 'en' ? "Chronicles I: 1-9 Ultimate Genealogy Tree" : "歷代志上 1-9 章終極全支派聖經家譜樹";
+      
+      const currentTabId = document.getElementById('chapterSelector').value;
+      populateDropdown();
+      document.getElementById('chapterSelector').value = currentTabId;
+      renderTree(currentTabId);
+    }
+
+    function renderTree(tabId) {
+      const activeTab = dataPayload.tabs.find(t => t.id === tabId);
+      const container = document.getElementById('treeContent');
+      container.innerHTML = '';
+      
+      if(activeTab && activeTab.tree) {
+        const rootUl = document.createElement('ul');
+        rootUl.appendChild(buildHtmlNode(activeTab.tree));
+        container.appendChild(rootUl);
+      }
+    }
+
+    function buildHtmlNode(node) {
+      const li = document.createElement('li');
+      const meta = dictionary[node.id] || { zh: node.id, en: node.id, gender: "M" };
+      
+      const card = document.createElement('div');
+      card.className = `node-card ${meta.gender}`;
+      card.setAttribute('data-id', node.id);
+      
+      const title = document.createElement('div');
+      title.className = 'node-title';
+      title.innerText = meta[currentLang] || meta['zh'] || node.id;
+      card.appendChild(title);
+      
+      const noteText = currentLang === 'en' ? node.notes_en : node.notes_zh;
+      if (noteText) {
+        const note = document.createElement('div');
+        note.className = 'node-note';
+        note.innerText = noteText;
+        card.appendChild(note);
+      }
+      
+      li.appendChild(card);
+      
+      if (node.children && node.children.length > 0) {
+        const ul = document.createElement('ul');
+        node.children.forEach(child => {
+          ul.appendChild(buildHtmlNode(child));
+        });
+        li.appendChild(ul);
+      }
+      return li;
+    }
+
+    // 萬能全域搜尋與跨頁自動定位演算法
+    function executeSearch() {
+      const keyword = document.getElementById('searchInput').value.trim().toLowerCase();
+      if (!keyword) return;
+
+      let targetId = null;
+      // 1. 從全域字典中模糊比對出人物的唯一 ID
+      for (let id in dictionary) {
+        let m = dictionary[id];
+        if ((m.zh && m.zh.toLowerCase().includes(keyword)) || 
+            (m.en && m.en.toLowerCase().includes(keyword)) ||
+            (m.lang3 && m.lang3.toLowerCase().includes(keyword)) ||
+            (m.lang4 && m.lang4.toLowerCase().includes(keyword))) {
+          targetId = id;
+          break;
+        }
+      }
+
+      if (!targetId) {
+        alert(currentLang === 'en' ? "Person not found!" : "找不到此人，請換個名字試試！");
+        return;
+      }
+
+      // 2. 遍歷 7 大章節，尋找該人物在哪個 Tab 裡面
+      let foundTabId = null;
+      for (let tab of dataPayload.tabs) {
+        if (checkNodeContains(tab.tree, targetId)) {
+          foundTabId = tab.id;
+          break;
+        }
+      }
+
+      if (foundTabId) {
+        // 3. 自動切換下拉選單並渲染該章節
+        document.getElementById('chapterSelector').value = foundTabId;
+        renderTree(foundTabId);
+
+        // 4. 定位 DOM 節點、閃爍高亮並平滑捲動到螢幕中央
+        setTimeout(() => {
+          const targetCard = document.querySelector(`[data-id="${targetId}"]`);
+          if (targetCard) {
+            targetCard.classList.add('highlighted');
+            targetCard.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
+          }
+        }, 200);
+      }
+    }
+
+    // 遞迴尋找節點防呆
+    function checkNodeContains(rootNode, targetId) {
+      if (rootNode.id === targetId) return true;
+      if (rootNode.children) {
+        for (let child of rootNode.children) {
+          if (checkNodeContains(child, targetId)) return true;
+        }
+      }
+      return false;
+    }
+
+    window.onload = init;
+  </script>
+</body>
+</html>

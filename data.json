@@ -1,0 +1,109 @@
+{
+  "tabs": [
+    {
+      "id": "adam_to_abraham",
+      "title_zh": "1. 從亞當到亞伯拉罕的家譜",
+      "tree": {
+        "id": "adam",
+        "children": [
+          {
+            "id": "seth",
+            "children": [
+              {
+                "id": "enosh",
+                "children": [
+                  { "id": "kenan" }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "esau_genealogy",
+      "title_zh": "2. 以掃的家譜",
+      "tree": {
+        "id": "esau",
+        "children": [
+          { "id": "eliphaz" },
+          { "id": "reuel" }
+        ]
+      }
+    },
+    {
+      "id": "judah_and_david",
+      "title_zh": "3. 猶大家譜與大衛王室",
+      "tree": {
+        "id": "israel",
+        "children": [
+          {
+            "id": "judah",
+            "children": [
+              { "id": "pharez" },
+              { "id": "zarah" }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "other_tribes",
+      "title_zh": "4. 以色列其餘支派",
+      "tree": {
+        "id": "israel",
+        "children": [
+          { "id": "reuben" },
+          { "id": "simeon" },
+          { "id": "issachar" },
+          { 
+            "id": "ephraim",
+            "children": [
+              { "id": "sherah_f", "notes_zh": "建築了下伯和侖、上伯和侖", "notes_en": "Built Beth-horon" },
+              { "id": "joshua", "notes_zh": "嫩的兒子約書亞" }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "levite_genealogy",
+      "title_zh": "5. 利未的家譜",
+      "tree": {
+        "id": "levi",
+        "children": [
+          {
+            "id": "kohath",
+            "children": [
+              { "id": "amram", "children": [{ "id": "aaron" }, { "id": "moses" }] }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "benjamin_and_saul",
+      "title_zh": "6. 便雅憫的家譜與掃羅王室",
+      "tree": {
+        "id": "kish",
+        "children": [
+          {
+            "id": "saul",
+            "children": [
+              { "id": "jonathan", "children": [{ "id": "merib_baal" }] }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "returned_exiles",
+      "title_zh": "7. 歸回之以色列人的家譜",
+      "tree": {
+        "id": "shallum_gate",
+        "notes_zh": "守門人的總首領",
+        "notes_en": "Chief Gatekeeper"
+      }
+    }
+  ]
+}
