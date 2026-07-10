@@ -4,163 +4,337 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>歷代志上 1-9 章終極全支派聖經家譜樹</title>
+  
+  <!-- 引入微軟 Segoe UI / Segoe Fluent Icons 與 Noto Sans 漢字 -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  
   <style>
     :root {
-      --primary-color: #2c3e50;
-      --accent-color: #d35400;
-      --bg-color: #f4f6f7;
-      --card-bg: #ffffff;
-      --male-color: #2980b9;
-      --female-color: #e74c3c;
+      --fluent-bg: #f3f3f3;
+      --fluent-card-bg: rgba(255, 255, 255, 0.7);
+      --fluent-border: rgba(0, 0, 0, 0.08);
+      --fluent-text-primary: #202020;
+      --fluent-text-secondary: #5f5f5f;
+      --fluent-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.08);
+      --fluent-shadow-hover: 0 12px 40px 0 rgba(0, 0, 0, 0.12);
+      
+      /* Fluent 經典性別色系 */
+      --male-color: #0078d4; /* Fluent Standard Blue */
+      --male-bg: rgba(0, 120, 212, 0.05);
+      --female-color: #e3008c; /* Fluent Standard Pink/Rose */
+      --female-bg: rgba(227, 0, 140, 0.05);
+      
+      --accent-color: #ff8c00; /* Windows Accent Orange */
     }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--primary-color);
+
+    * {
+      box-sizing: border-box;
       margin: 0;
-      padding: 20px;
+      padding: 0;
     }
+
+    body {
+      font-family: "Segoe UI", "Segoe UI Web (West European)", "Noto Sans TC", -apple-system, sans-serif;
+      background-color: var(--fluent-bg);
+      background-image: radial-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 0);
+      background-size: 24px 24px;
+      color: var(--fluent-text-primary);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding: 30px;
+    }
+
     header {
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
     }
-    /* 控制區排版 */
+
+    header h1 {
+      font-weight: 700;
+      font-size: 28px;
+      letter-spacing: -0.5px;
+      color: #111;
+      margin-bottom: 8px;
+    }
+
+    header p {
+      font-size: 14px;
+      color: var(--fluent-text-secondary);
+    }
+
+    /* Fluent 控制面板：壓克力毛玻璃質感 */
     .control-panel {
-      background: white;
-      padding: 15px;
+      background: var(--fluent-card-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--fluent-border);
+      padding: 15px 25px;
       border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      max-width: 900px;
-      margin: 0 auto 25px auto;
+      box-shadow: var(--fluent-shadow);
+      max-width: 1000px;
+      margin: 0 auto 30px auto;
       display: flex;
       flex-wrap: wrap;
-      gap: 15px;
+      gap: 20px;
       align-items: center;
       justify-content: space-between;
+      width: 100%;
     }
+
     .control-group {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
     }
-    select, input, button {
-      padding: 10px 14px;
-      font-size: 14px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      outline: none;
+
+    /* Fluent 現代化按鈕與輸入框 */
+    .lang-selector {
+      display: flex;
+      background: rgba(0, 0, 0, 0.04);
+      padding: 3px;
+      border-radius: 6px;
+      border: 1px solid rgba(0, 0, 0, 0.05);
     }
-    select:focus, input:focus {
-      border-color: var(--primary-color);
-    }
+
     .lang-btn {
-      background-color: #e0e0e0;
-      cursor: pointer;
-      font-weight: bold;
+      padding: 6px 14px;
+      font-size: 13px;
+      font-weight: 500;
+      background: transparent;
       border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      color: var(--fluent-text-secondary);
+      transition: all 0.15s cubic-bezier(0.1, 0.9, 0.2, 1);
     }
+
     .lang-btn.active {
-      background-color: var(--primary-color);
-      color: white;
+      background: white;
+      color: var(--fluent-text-primary);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.06);
     }
+
+    select, input {
+      background: white;
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+      padding: 8px 16px;
+      font-size: 14px;
+      border-radius: 4px;
+      outline: none;
+      height: 38px;
+      transition: all 0.2s cubic-bezier(0.1, 0.9, 0.2, 1);
+    }
+
+    select:hover, input:hover {
+      background: #fafafa;
+      border-bottom-color: var(--primary-color);
+    }
+
+    select:focus, input:focus {
+      background: white;
+      border-bottom: 2px solid var(--male-color);
+    }
+
     .search-btn {
-      background-color: var(--accent-color);
+      background: var(--male-color);
       color: white;
       border: none;
+      border-radius: 4px;
+      padding: 8px 20px;
+      font-size: 14px;
+      font-weight: 600;
       cursor: pointer;
-      font-weight: bold;
+      height: 38px;
+      transition: filter 0.2s;
     }
-    /* 巨型畫布 */
-    .tree-wrapper {
-      background: var(--card-bg);
-      padding: 40px;
-      border-radius: 8px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+
+    .search-btn:hover {
+      filter: brightness(1.1);
+    }
+
+    /* 樹狀結構主要畫布 */
+    .tree-container {
+      background: var(--fluent-card-bg);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid var(--fluent-border);
+      padding: 50px;
+      border-radius: 12px;
+      box-shadow: var(--fluent-shadow);
       overflow: auto;
-      min-height: 500px;
+      flex-grow: 1;
+      width: 100%;
+      position: relative;
     }
-    /* CSS 樹狀連線結構 */
+
+    /* 樹狀連線與展開架構 */
     .genealogy-tree ul {
-      padding-top: 20px; position: relative;
-      transition: all 0.5s;
+      padding-top: 24px;
+      position: relative;
+      transition: all 0.4s cubic-bezier(0.1, 0.9, 0.2, 1);
       display: flex;
       justify-content: center;
     }
+
     .genealogy-tree li {
       text-align: center;
       list-style-type: none;
       position: relative;
-      padding: 20px 5px 0 5px;
-      transition: all 0.5s;
+      padding: 24px 8px 0 8px;
+      transition: all 0.4s cubic-bezier(0.1, 0.9, 0.2, 1);
     }
+
     .genealogy-tree li::before, .genealogy-tree li::after {
       content: '';
       position: absolute; top: 0; right: 50%;
-      border-top: 2px solid #ccc;
-      width: 50%; height: 20px;
+      border-top: 1.5px solid rgba(0, 0, 0, 0.15);
+      width: 50%; height: 24px;
     }
+
     .genealogy-tree li::after {
       right: auto; left: 50%;
-      border-left: 2px solid #ccc;
+      border-left: 1.5px solid rgba(0, 0, 0, 0.15);
     }
+
     .genealogy-tree li:only-child::after, .genealogy-tree li:only-child::before {
       display: none;
     }
+
     .genealogy-tree li:only-child { padding-top: 0; }
+    
     .genealogy-tree li:first-child::before, .genealogy-tree li:last-child::after {
       border: none;
     }
+
     .genealogy-tree li:last-child::before {
-      border-right: 2px solid #ccc;
-      border-radius: 0 5px 0 0;
+      border-right: 1.5px solid rgba(0, 0, 0, 0.15);
+      border-radius: 0 6px 0 0;
     }
+
     .genealogy-tree li:first-child::after {
-      border-radius: 5px 0 0 0;
+      border-radius: 6px 0 0 0;
     }
+
     .genealogy-tree ul ul::before {
       content: '';
       position: absolute; top: 0; left: 50%;
-      border-left: 2px solid #ccc;
-      width: 0; height: 20px;
+      border-left: 1.5px solid rgba(0, 0, 0, 0.15);
+      width: 0; height: 24px;
     }
-    /* 性別幾何形狀卡片 */
-    .node-card {
-      padding: 12px;
+
+    /* 節點容器（含收合按鈕的排列） */
+    .node-wrapper {
       display: inline-block;
-      background-color: #fff;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      transition: all 0.3s;
-      vertical-align: top;
-      min-width: 100px;
+      position: relative;
+      z-index: 10;
     }
-    /* 男生：天藍色正方形 */
+
+    /* Fluent 性別節點樣式 */
+    .node-card {
+      padding: 14px 18px;
+      background-color: white;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      transition: all 0.3s cubic-bezier(0.1, 0.9, 0.2, 1);
+      cursor: pointer;
+      user-select: none;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .node-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--fluent-shadow-hover);
+    }
+
+    /* 男生：藍色正方形（保留極微細的 Fluent 4px 圓角） */
     .node-card.M {
-      border: 3px solid var(--male-color);
-      border-radius: 0px; 
+      border: 2px solid var(--male-color);
+      border-radius: 4px;
+      min-width: 120px;
+      background: linear-gradient(180deg, #ffffff 0%, var(--male-bg) 100%);
     }
+
     /* 女生：玫瑰紅圓形 */
     .node-card.F {
-      border: 3px solid var(--female-color);
+      border: 2px solid var(--female-color);
       border-radius: 50%;
-      min-width: 110px;
-      min-height: 110px;
-      display: inline-flex;
-      flex-direction: column;
-      justify-content: center;
+      width: 110px;
+      height: 110px;
+      background: linear-gradient(180deg, #ffffff 0%, var(--female-bg) 100%);
+    }
+
+    .node-title {
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--fluent-text-primary);
+      text-align: center;
+    }
+
+    .node-note {
+      font-size: 11px;
+      color: var(--fluent-text-secondary);
+      margin-top: 4px;
+      max-width: 110px;
+      line-height: 1.3;
+      text-align: center;
+    }
+
+    /* 展開/收合控制按鈕 */
+    .toggle-btn {
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 22px;
+      height: 22px;
+      background: white;
+      border: 1.5px solid rgba(0,0,0,0.15);
+      border-radius: 50%;
+      display: flex;
       align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: bold;
+      color: var(--fluent-text-secondary);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 20;
+      transition: all 0.2s;
     }
-    .node-title { font-weight: bold; font-size: 15px; }
-    .node-note { font-size: 11px; color: var(--accent-color); margin-top: 4px; max-width: 120px; }
+
+    .toggle-btn:hover {
+      background: var(--fluent-bg);
+      color: var(--fluent-text-primary);
+      transform: translateX(-50%) scale(1.1);
+    }
+
+    /* 收合狀態下隱藏子代並重繪連線 */
+    .collapsed > ul {
+      display: none !important;
+    }
+
+    /* 收合狀態的連線防護 */
+    .collapsed::after, .collapsed::before {
+      display: none !important;
+    }
+
+    /* 精準搜尋高亮動態閃爍（微軟現代亮橘色 Accent） */
+    @keyframes fluent-pulse {
+      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 140, 0, 0.7); }
+      50% { transform: scale(1.1); box-shadow: 0 0 0 20px rgba(255, 140, 0, 0); }
+      100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 140, 0, 0); }
+    }
     
-    /* 搜尋高亮動態閃爍 */
-    @keyframes highlight-glow {
-      0% { transform: scale(1); box-shadow: 0 0 0 rgba(211, 84, 0, 0); }
-      50% { transform: scale(1.15); box-shadow: 0 0 25px #d35400; background-color: #fbeee6; }
-      100% { transform: scale(1); box-shadow: 0 0 0 rgba(211, 84, 0, 0); }
-    }
     .highlighted {
-      animation: highlight-glow 2s ease-in-out 3;
-      border-width: 5px !important;
+      animation: fluent-pulse 1.8s ease-in-out 3;
+      border-color: var(--accent-color) !important;
+      border-width: 3px !important;
+      z-index: 100 !important;
     }
   </style>
 </head>
@@ -168,27 +342,31 @@
 
   <header>
     <h1 id="mainTitle">歷代志上 1-9 章終極全支派聖經家譜樹</h1>
+    <p>高質感微軟 Fluent UI 現代化動態智慧導覽系統</p>
   </header>
 
   <div class="control-panel">
-    <div class="control-group">
+    <!-- 語言切換選單 -->
+    <div class="lang-selector">
       <button class="lang-btn active" onclick="switchLanguage('zh')">中文</button>
       <button class="lang-btn" onclick="switchLanguage('en')">English</button>
       <button class="lang-btn" onclick="switchLanguage('lang3')">語言3</button>
       <button class="lang-btn" onclick="switchLanguage('lang4')">語言4</button>
     </div>
     
+    <!-- 章節下拉選單 -->
     <div class="control-group">
       <select id="chapterSelector" onchange="onChapterSelect()"></select>
     </div>
 
+    <!-- 智慧搜尋框 -->
     <div class="control-group">
-      <input type="text" id="searchInput" placeholder="搜尋人名..." onkeypress="if(event.keyCode==13) executeSearch()">
+      <input type="text" id="searchInput" placeholder="搜尋先祖或首領..." onkeypress="if(event.keyCode==13) executeSearch()">
       <button class="search-btn" onclick="executeSearch()">搜尋</button>
     </div>
   </div>
 
-  <div class="tree-wrapper">
+  <div class="tree-container">
     <div class="genealogy-tree" id="treeContent"></div>
   </div>
 
@@ -220,15 +398,19 @@
 
     async function init() {
       try {
-        const resDict = await fetch('dictionary.json');
+        // 使用 document.baseURI 動態解析絕對 URL，防止在 iframe 或 blob 沙盒預覽環境中相對路徑解析失敗
+        const dictUrl = new URL('./dictionary.json', document.baseURI).href;
+        const dataUrl = new URL('./data.json', document.baseURI).href;
+
+        const resDict = await fetch(dictUrl);
         dictionary = await resDict.json();
-        const resData = await fetch('data.json');
+        const resData = await fetch(dataUrl);
         dataPayload = await resData.json();
         
         populateDropdown();
         renderTree(dataPayload.tabs[0].id);
       } catch (err) {
-        console.error("資料加載錯誤，請確認 JSON 檔案是否存在且格式正確。", err);
+        console.error("無法正確獲取 JSON 設定檔。請檢查 dictionary.json 和 data.json 是否存在於正確的目錄下。", err);
       }
     }
 
@@ -274,13 +456,26 @@
       }
     }
 
+    // 構建帶有展開與收合控制項的 HTML 樹節點
     function buildHtmlNode(node) {
       const li = document.createElement('li');
+      li.id = "li-" + node.id; // 便於搜尋時，透過父級鏈進行強制展開
+      
       const meta = dictionary[node.id] || { zh: node.id, en: node.id, gender: "M" };
       
+      const wrapper = document.createElement('div');
+      wrapper.className = 'node-wrapper';
+
       const card = document.createElement('div');
       card.className = `node-card ${meta.gender}`;
       card.setAttribute('data-id', node.id);
+      
+      // 點擊卡片本體也能切換展開/收合
+      card.onclick = (e) => {
+        if(node.children && node.children.length > 0) {
+          toggleNode(li, toggleBtn);
+        }
+      };
       
       const title = document.createElement('div');
       title.className = 'node-title';
@@ -295,7 +490,22 @@
         card.appendChild(note);
       }
       
-      li.appendChild(card);
+      wrapper.appendChild(card);
+      
+      // 若有下一代，生成展開/收合微型按鈕
+      let toggleBtn = null;
+      if (node.children && node.children.length > 0) {
+        toggleBtn = document.createElement('div');
+        toggleBtn.className = 'toggle-btn';
+        toggleBtn.innerText = '−'; // 預設為展開狀態
+        toggleBtn.onclick = (e) => {
+          e.stopPropagation(); // 阻止事件冒泡到卡片上
+          toggleNode(li, toggleBtn);
+        };
+        wrapper.appendChild(toggleBtn);
+      }
+
+      li.appendChild(wrapper);
       
       if (node.children && node.children.length > 0) {
         const ul = document.createElement('ul');
@@ -307,13 +517,24 @@
       return li;
     }
 
-    // 萬能全域搜尋與跨頁自動定位演算法
+    // 流暢展開與收合核心控制
+    function toggleNode(liElement, btnElement) {
+      if (liElement.classList.contains('collapsed')) {
+        liElement.classList.remove('collapsed');
+        if(btnElement) btnElement.innerText = '−';
+      } else {
+        liElement.classList.add('collapsed');
+        if(btnElement) btnElement.innerText = '+';
+      }
+    }
+
+    // 全域精準搜尋定位與祖先鏈自動展開演算法
     function executeSearch() {
       const keyword = document.getElementById('searchInput').value.trim().toLowerCase();
       if (!keyword) return;
 
       let targetId = null;
-      // 1. 從全域字典中模糊比對出人物的唯一 ID
+      // 1. 全域字典比對
       for (let id in dictionary) {
         let m = dictionary[id];
         if ((m.zh && m.zh.toLowerCase().includes(keyword)) || 
@@ -326,11 +547,11 @@
       }
 
       if (!targetId) {
-        alert(currentLang === 'en' ? "Person not found!" : "找不到此人，請換個名字試試！");
+        alert(currentLang === 'en' ? "Target node not found in index!" : "未在資料庫中找到符合的名字，請確認後再搜尋！");
         return;
       }
 
-      // 2. 遍歷 7 大章節，尋找該人物在哪個 Tab 裡面
+      // 2. 搜尋該節點座落於哪一個分頁
       let foundTabId = null;
       for (let tab of dataPayload.tabs) {
         if (checkNodeContains(tab.tree, targetId)) {
@@ -340,22 +561,30 @@
       }
 
       if (foundTabId) {
-        // 3. 自動切換下拉選單並渲染該章節
+        // 3. 切換分頁下拉選單
         document.getElementById('chapterSelector').value = foundTabId;
         renderTree(foundTabId);
 
-        // 4. 定位 DOM 節點、閃爍高亮並平滑捲動到螢幕中央
+        // 4. 強制展開目標節點的所有祖先節點
+        expandAncestorsOf(targetId);
+
+        // 5. 高亮閃爍並平滑移動至中央
         setTimeout(() => {
           const targetCard = document.querySelector(`[data-id="${targetId}"]`);
           if (targetCard) {
             targetCard.classList.add('highlighted');
             targetCard.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
+            
+            // 3秒後移除高亮樣式
+            setTimeout(() => {
+              targetCard.classList.remove('highlighted');
+            }, 5400);
           }
-        }, 200);
+        }, 300);
       }
     }
 
-    // 遞迴尋找節點防呆
+    // 遞迴尋找目標
     function checkNodeContains(rootNode, targetId) {
       if (rootNode.id === targetId) return true;
       if (rootNode.children) {
@@ -364,6 +593,22 @@
         }
       }
       return false;
+    }
+
+    // 強制將目標節點往上的所有收合狀態進行逆向解鎖展開
+    function expandAncestorsOf(targetId) {
+      const targetLi = document.getElementById("li-" + targetId);
+      if (!targetLi) return;
+      
+      let currentElement = targetLi.parentElement; // 取得 <ul>
+      while (currentElement && currentElement.tagName !== 'DIV') {
+        if (currentElement.tagName === 'LI' && currentElement.classList.contains('collapsed')) {
+          currentElement.classList.remove('collapsed');
+          const tBtn = currentElement.querySelector('.toggle-btn');
+          if(tBtn) tBtn.innerText = '−';
+        }
+        currentElement = currentElement.parentElement;
+      }
     }
 
     window.onload = init;
